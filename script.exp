@@ -1,0 +1,9 @@
+#!/usr/bin/expect -f
+
+set user [lindex $argv 0]
+
+spawn docker run -v ovpn-data:/etc/openvpn --log-driver=none --rm -it kylemanna/openvpn easyrsa build-client-full $user nopass
+expect "ca.key:"
+send "penguin\r"
+expect "#"
+
