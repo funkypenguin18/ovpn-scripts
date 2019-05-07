@@ -21,7 +21,7 @@ docker run -v $OVPN_DATA:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN ky
 docker run -v ovpn-data:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
 
 ------Усли генерить руками:
-пароль penguin у сервера, спрашивают при генерации
+пароль penguin у сервера (как примерЮ он есть в скрипте), спрашивают при генерации
 
 Сгенерить клиента с именем CLIENTNAME:
 docker run -v ovpn-data:/etc/openvpn --log-driver=none --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
